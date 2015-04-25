@@ -37,6 +37,10 @@ android {
     compileSdkVersion("Google Inc.:Google APIs:19")
     buildToolsVersion("21.1.2")
 
+    lintOptions {
+        abortOnError false
+    }
+
     sourceSets {
 
         main {
@@ -64,11 +68,11 @@ android {
 
     signingConfigs {
         release {
-//            apply from: "private/keys/IOIOFlux.properties"
-//            storeFile file(RELEASE_STORE_FILE)
-//            storePassword RELEASE_STORE_PASSWORD
-//            keyAlias RELEASE_KEY_ALIAS
-//            keyPassword RELEASE_KEY_PASSWORD
+            apply from: "private/keys/IOIOFlux.properties"
+            storeFile file("private/keys/${RELEASE_STORE_FILE}")
+            storePassword RELEASE_STORE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
         }
     }
 
