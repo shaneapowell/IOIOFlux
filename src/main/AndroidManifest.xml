@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.github.shaneapowell.ioioflux" >
+
+	<uses-sdk android:minSdkVersion="17"/>
+
+	<uses-permission android:name="android.permission.BLUETOOTH" />
+	<uses-permission android:name="android.permission.INTERNET" />
+
+	<uses-feature android:name="android.hardware.usb.host" android:required="false" />
+	<uses-feature android:name="android.hardware.usb.accessory" android:required="false" />
+	<!--<uses-feature android:glEsVersion="0x00020000" android:required="true" />-->
+
+
+	<application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+	    <service
+		    android:name="com.github.shaneapowell.ioioflux.FluxService"
+		    android:enabled="true"
+		    android:exported="false"
+		    android:icon="@drawable/ic_launcher"
+		    android:stopWithTask="true">
+	    </service>
+
+        <activity
+            android:name="com.github.shaneapowell.ioioflux.FluxActivity"
+            android:label="@string/app_name"
+	        android:launchMode="singleInstance">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+	        <intent-filter>
+		        <action android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED"/>
+	        </intent-filter>
+
+	        <meta-data android:name="android.hardware.usb.action.USB_ACCESSORY_ATTACHED" android:resource="@xml/accessory_filter" />
+
+        </activity>
+
+	    <activity
+		    android:name="com.github.shaneapowell.ioioflux.FluxPrefsActivity"
+	        android:label="@string/app_name"/>
+
+    </application>
+
+</manifest>

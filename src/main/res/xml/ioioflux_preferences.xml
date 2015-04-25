@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+	<ListPreference
+		android:key="lights_per_arm"
+		android:title="Lights per Arm"
+		android:summary="The number of lights on each arm of the Flux Capacitor"
+		android:entries="@array/lights_per_arm"
+		android:entryValues="@array/lights_per_arm"
+		android:defaultValue="3"/>
+
+
+</PreferenceScreen>

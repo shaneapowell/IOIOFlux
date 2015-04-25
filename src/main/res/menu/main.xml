@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.github.shaneapowell.ioioflux.MainActivity" >
+
+	<item
+		android:id="@+id/action_power"
+	    android:title="Power"
+	    android:showAsAction="always"
+	    android:icon="@drawable/ic_action_power_off"/>
+
+    <item android:id="@+id/action_settings"
+        android:title="@string/action_settings"
+        android:showAsAction="never" />
+
+	<item android:id="@+id/action_diyflux"
+	      android:title="@string/action_diyflux"
+	      android:showAsAction="never" />
+
+	<item android:id="@+id/action_about"
+	      android:title="@string/action_about"
+	      android:showAsAction="never" />
+</menu>
