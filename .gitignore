@@ -6,7 +6,6 @@ gen
 gen-external-apklibs
 tmp
 private
-wiki
 *.iws
 *.ipr
 *.iml
